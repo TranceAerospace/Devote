@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F62DCF029F22A7600DE8F56 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F62DCEF29F22A7600DE8F56 /* BackgroundImageView.swift */; };
 		9FB2B0E929EB868A00446ABB /* DevoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2B0E829EB868A00446ABB /* DevoteApp.swift */; };
 		9FB2B0EB29EB868A00446ABB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2B0EA29EB868A00446ABB /* ContentView.swift */; };
 		9FB2B0ED29EB868B00446ABB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FB2B0EC29EB868B00446ABB /* Assets.xcassets */; };
@@ -16,9 +17,12 @@
 		9FB2B0FE29EB87C200446ABB /* sound-ding.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9FB2B0FB29EB87C200446ABB /* sound-ding.mp3 */; };
 		9FB2B0FF29EB87C200446ABB /* sound-tap.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9FB2B0FC29EB87C200446ABB /* sound-tap.mp3 */; };
 		9FB2B10029EB87C200446ABB /* sound-rise.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9FB2B0FD29EB87C200446ABB /* sound-rise.mp3 */; };
+		9FB2B10D29ED54BB00446ABB /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2B10C29ED54BB00446ABB /* Constant.swift */; };
+		9FB2B10F29ED5E0000446ABB /* HideKeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FB2B10E29ED5E0000446ABB /* HideKeyboardExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F62DCEF29F22A7600DE8F56 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 		9FB2B0E529EB868A00446ABB /* Devote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Devote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FB2B0E829EB868A00446ABB /* DevoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DevoteApp.swift; sourceTree = "<group>"; };
 		9FB2B0EA29EB868A00446ABB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -30,6 +34,8 @@
 		9FB2B0FC29EB87C200446ABB /* sound-tap.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-tap.mp3"; sourceTree = "<group>"; };
 		9FB2B0FD29EB87C200446ABB /* sound-rise.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "sound-rise.mp3"; sourceTree = "<group>"; };
 		9FB2B10729EB886000446ABB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		9FB2B10C29ED54BB00446ABB /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		9FB2B10E29ED5E0000446ABB /* HideKeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboardExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				9FB2B0EA29EB868A00446ABB /* ContentView.swift */,
+				9F62DCEF29F22A7600DE8F56 /* BackgroundImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -105,6 +112,7 @@
 		9FB2B10329EB87FB00446ABB /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				9FB2B10E29ED5E0000446ABB /* HideKeyboardExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -112,6 +120,7 @@
 		9FB2B10429EB880500446ABB /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				9FB2B10C29ED54BB00446ABB /* Constant.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -206,7 +215,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9FB2B0F229EB868B00446ABB /* Persistence.swift in Sources */,
+				9F62DCF029F22A7600DE8F56 /* BackgroundImageView.swift in Sources */,
 				9FB2B0EB29EB868A00446ABB /* ContentView.swift in Sources */,
+				9FB2B10F29ED5E0000446ABB /* HideKeyboardExtension.swift in Sources */,
+				9FB2B10D29ED54BB00446ABB /* Constant.swift in Sources */,
 				9FB2B0F529EB868B00446ABB /* Devote.xcdatamodeld in Sources */,
 				9FB2B0E929EB868A00446ABB /* DevoteApp.swift in Sources */,
 			);
