@@ -12,6 +12,7 @@ struct ContentView: View {
         // MARK: - Properties
     @State var task: String = ""
     @State private var showNewTaskItem: Bool = false
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
     
     
     @Environment(\.managedObjectContext) private var viewContext
@@ -45,6 +46,40 @@ struct ContentView: View {
                 // MARK: - Main View
                 VStack {
                     // MARK: - Header
+                    HStack(spacing: 10) {
+                        //Title
+                        Text("Devote")
+                            .font(.system(.largeTitle, design: .rounded))
+                            .fontWeight(.heavy)
+                            .padding(.leading, 4)
+                        
+                        Spacer()
+                        
+                        //Edit Button
+                        EditButton()
+                            .font(.system(size: 16, weight: .semibold, design: .rounded))
+                            .padding(.horizontal, 10)
+                            .frame(minWidth: 70, minHeight: 24)
+                            .background(
+                                Capsule().stroke(Color.white, lineWidth: 2)
+                            )
+                        
+                        // Appearance Button
+                        Button {
+                            //toggle Appearance
+                            isDarkMode.toggle()
+                        } label: {
+                            Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                                .font(.system(.title, design: .rounded))
+                        }
+
+                        
+                    } //: HStack
+                    .padding()
+                    .foregroundColor(.white)
+                    
                     Spacer(minLength: 80)
                     // MARK: - New Task Button
                     Button {
@@ -98,11 +133,7 @@ struct ContentView: View {
             .scrollContentBackground(.hidden)
             .navigationTitle("Daily Tasks")
             .navigationBarTitleDisplayMode(.large)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-            } //: Toolbar
+            .toolbar(.hidden)
             .background(
             BackgroundImageView()
             )
