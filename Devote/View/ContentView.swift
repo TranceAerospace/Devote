@@ -23,7 +23,7 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
     
-
+    
     
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
@@ -43,11 +43,11 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                // MARK: - Main View
+                    // MARK: - Main View
                 VStack {
-                    // MARK: - Header
+                        // MARK: - Header
                     HStack(spacing: 10) {
-                        //Title
+                            //Title
                         Text("Devote")
                             .font(.system(.largeTitle, design: .rounded))
                             .fontWeight(.heavy)
@@ -55,7 +55,7 @@ struct ContentView: View {
                         
                         Spacer()
                         
-                        //Edit Button
+                            //Edit Button
                         EditButton()
                             .font(.system(size: 16, weight: .semibold, design: .rounded))
                             .padding(.horizontal, 10)
@@ -64,9 +64,9 @@ struct ContentView: View {
                                 Capsule().stroke(Color.white, lineWidth: 2)
                             )
                         
-                        // Appearance Button
+                            // Appearance Button
                         Button {
-                            //toggle Appearance
+                                //toggle Appearance
                             isDarkMode.toggle()
                         } label: {
                             Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
@@ -74,14 +74,14 @@ struct ContentView: View {
                                 .frame(width: 24, height: 24)
                                 .font(.system(.title, design: .rounded))
                         }
-
+                        
                         
                     } //: HStack
                     .padding()
                     .foregroundColor(.white)
                     
                     Spacer(minLength: 80)
-                    // MARK: - New Task Button
+                        // MARK: - New Task Button
                     Button {
                         showNewTaskItem = true
                     } label: {
@@ -98,8 +98,8 @@ struct ContentView: View {
                             .clipShape(Capsule())
                     )
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.25), radius: 8, x: 0, y: 4)
-
-                    // MARK: - Tasks
+                    
+                        // MARK: - Tasks
                     List {
                         ForEach(items) { item in
                             ListRowItemView(item: item)
@@ -111,15 +111,21 @@ struct ContentView: View {
                     .padding(.vertical, 0)
                     .frame(maxWidth: 640)
                 } //: VStack
-                // MARK: - New Task Item
+                .blur(radius: showNewTaskItem ? 8.0 : 0, opaque: false)
+                .transition(.move(edge: .bottom))
+                .animation(.easeOut(duration: 0.5), value: showNewTaskItem)
+                
+                    // MARK: - New Task Item
                 
                 if showNewTaskItem {
-                    BlankView()
-                        .onTapGesture {
-                            withAnimation {
-                                showNewTaskItem = false
-                            }
+                    BlankView(
+                        backgroundColor: isDarkMode ? Color.black : Color.gray,
+                        backgroundOpacity: isDarkMode ? 0.3 : 0.5)
+                    .onTapGesture {
+                        withAnimation {
+                            showNewTaskItem = false
                         }
+                    }
                     NewTaskItemView(isShowing: $showNewTaskItem)
                 }
             } //: ZStack
@@ -128,7 +134,9 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.large)
             .toolbar(.hidden)
             .background(
-            BackgroundImageView()
+                BackgroundImageView()
+                    .blur(radius: showNewTaskItem ? 8.0 : 0, opaque: false)
+                
             )
             .background(
                 backgroundGradient.ignoresSafeArea(.all)
